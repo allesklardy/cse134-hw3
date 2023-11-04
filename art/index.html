@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>My art</title>
+    <meta name="description" content="Learn about my portfolio. Please hire me!!">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/index.html#projects">Projects</a></li>
+            <li><a href="/contact/">Contact Me</a></li>
+            <li><a href="/art/">Art</a></li>
+        </ul>
+    </nav>
+    <h1>My Personal Art Projects</h1>
+    <canvas id="myCanvas" width="200" height="100"></canvas>
+    <script>
+        const canvas = document.getElementById("myCanvas");
+        const ctx = canvas.getContext("2d");
+        ctx.fillStyle = "#FF0000";
+        ctx.fillRect(0, 0, 200, 100);
+        ctx.fillStyle = "#000000";
+        ctx.fillRect(50, 50, 100, 30);
+        ctx.fillRect(50, 20, 10, 10);
+        ctx.fillRect(140, 20, 10, 10);
+
+
+    </script>
+    <aside>
+        <figure>
+            <h2>My Favorite Jif</h2>
+            <picture>
+                <source srcset="/assets/rick.gif" type="image/gif">
+                <img src="/assets/rick.gif" alt="just a rick roll">
+            </picture>
+            <figcaption>Just a Rick Roll</figcaption>
+        </figure>
+
+        <div>
+            <h2>My Favorite Video</h2>
+            <video width="500" height="300" controls autoplay>
+                <source src="/assets/video.webm" type="video/webm">
+            </video>
+        </div>
+
+        <div>
+            <h2>My Favorite Audio</h2>
+            <audio controls>
+                <source src="/assets/audio.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+
+    </aside>
+    <footer>&copy; 2023 Adrian for CSE 134</footer>
+</body>
+
+</html>
