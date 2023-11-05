@@ -1,0 +1,243 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url("Roboto/Roboto-Regular.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto";
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth !important;
+}
+
+nav ul li,
+nav ul a {
+    display: inline-block;
+    text-decoration: none;
+    color: gainsboro;
+    margin: 0 .3em;
+}
+
+nav p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+:root {
+    --bg-size: 400%;
+    --prim: #8ECAE6;
+    --secon: #219EBC;
+    --tert: #023047;
+    --quat: #FFB703;
+    --quint: #FB8500;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+h1 span {
+
+    background: linear-gradient(90deg,
+            var(--secon),
+            var(--quint),
+            var(--secon)) 0 0 / var(--bg-size) 100%;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: move-bg 4s infinite linear;
+}
+
+@keyframes move-bg {
+    to {
+        background-position: var(--bg-size) 0;
+    }
+}
+
+nav {
+    background-color: var(--quint);
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+
+.pageheader {
+    background-image: url("bg.jpg");
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: white;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+h1 {
+    font-size: 5rem;
+}
+
+header p {
+    font-size: 1.5rem;
+    color: rgb(204, 204, 204);
+}
+
+#projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: rgb(24, 26, 44);
+    color: white;
+    padding: 5em 1em;
+}
+
+#projects header {
+    text-align: center;
+    font-size: 2rem;
+    margin: 0 auto;
+    text-shadow: 0 0 100px var(--prim);
+}
+
+
+.project {
+    padding: 1em 2em;
+    border-left: 3px solid var(--quint);
+    border-image:
+        linear-gradient(to bottom,
+            rgba(0, 0, 0, 0),
+            var(--secon),
+            rgba(0, 0, 0, 0)) 1 100%;
+
+    background-image: linear-gradient(to right,
+            rgba(0, 255, 255, 0.2),
+            rgba(0, 0, 0, 0));
+    background-size: 0% 100%;
+    transition: background-size .3s cubic-bezier(1, 0, 0, 1);
+    background-repeat: no-repeat;
+}
+
+.project:hover {
+    background-size: 100% 100%;
+}
+
+.project:not(:last-child) {
+    margin-bottom: 2em;
+}
+
+.project h3 a {
+    color: var(--quint);
+}
+
+
+
+.project ul {
+    list-style: square;
+    padding: 1em 0;
+    margin-left: 1em;
+}
+
+#projects article h3 {
+    font-size: 2rem;
+}
+
+
+
+.backdrop1 {
+    background-image: url("backdrop.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 20em;
+    backdrop-filter: blur(5px);
+}
+
+
+#education {
+    background: var(--tert);
+    padding: 10em 1em;
+    color: var(--prim);
+}
+
+#education h2 {
+    font-size: 2rem;
+    color: whitesmoke;
+    text-align: center;
+    text-shadow: 0 0 100px var(--prim);
+
+}
+
+em {
+    color: var(--quat);
+    font-weight: bold;
+    font-style: normal;
+}
+
+#education ol {
+    display: grid;
+    gap: 2em;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-around;
+    justify-items: normal;
+    align-content: space-evenly;
+    align-items: center;
+    width: 100vw;
+    padding: 3em 3em;
+}
+
+#education ol li {
+    list-style: none;
+    display: inline-block;
+    padding: 2em;
+    border: 3px solid var(--secon);
+    border-radius: 2em 2em 2em 0;
+    text-align: center;
+    min-width: 300px;
+    transition: all .3s ease-in-out;
+}
+
+#education ol li h3 {
+    margin-bottom: .75em;
+    color: var(--quint)
+}
+
+#education ol li:hover {
+    background: var(--secon);
+    color: var(--tert);
+    border: 3px solid var(--tert);
+    box-shadow: 0 0 100px var(--prim);
+}
+
+
+
+.backdrop2 {
+    background-image: url("backdrop2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 20em;
+    backdrop-filter: blur(5px);
+}
