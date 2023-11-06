@@ -7,7 +7,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Roboto";
+    font-family: "Roboto", sans-serif;
 }
 
 a {
@@ -45,26 +45,28 @@ body {
     overflow-x: hidden;
 }
 
-h1 span {
+h1 .coloranimation {
 
     background: linear-gradient(90deg,
-            var(--secon),
-            var(--quint),
-            var(--secon)) 0 0 / var(--bg-size) 100%;
+            var(--secon, #8ECAE6),
+            var(--quint, #FB8500),
+            var(--secon, #8ECAE6)) 0 0 / var(--bg-size, 400%) 100%;
     color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
     animation: move-bg 4s infinite linear;
+
+    text-shadow: 0 0 50px var(--prim);
 }
 
 @keyframes move-bg {
     to {
-        background-position: var(--bg-size) 0;
+        background-position: var(--bg-size, 400%) 0;
     }
 }
 
 nav {
-    background-color: var(--quint);
+    background-color: var(--quint, #FFB703);
     padding: 1em;
     display: flex;
     justify-content: space-between;
@@ -76,7 +78,7 @@ nav {
 
 
 .pageheader {
-    background-image: url("bg.jpg");
+    background-image: url("https://ik.imagekit.io/llkhnqhls/csehw3/assets/bg.jpg?tr=w-1920,h-1080");
     background-size: cover;
     background-position: center;
     text-align: center;
@@ -98,6 +100,7 @@ nav {
     }
 }
 
+
 h1 {
     font-size: 5rem;
 }
@@ -109,27 +112,31 @@ header p {
 
 #projects {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
     background: rgb(24, 26, 44);
     color: white;
     padding: 5em 1em;
 }
 
-#projects header {
-    text-align: center;
-    font-size: 2rem;
-    margin: 0 auto;
-    text-shadow: 0 0 100px var(--prim);
+#projects header h2 {
+    padding: 0;
+    font-size: 8rem;
+    text-shadow: 0 0 100px var(--prim, #023047);
+    font-weight: bolder;
+}
+
+#project1 {
+    transform: rotate(-90deg) translate(-2em);
 }
 
 
 .project {
     padding: 1em 2em;
-    border-left: 3px solid var(--quint);
+    border-left: 3px solid var(--quint, #FB8500);
     border-image:
         linear-gradient(to bottom,
             rgba(0, 0, 0, 0),
-            var(--secon),
+            var(--secon, #8ECAE6),
             rgba(0, 0, 0, 0)) 1 100%;
 
     background-image: linear-gradient(to right,
@@ -149,7 +156,7 @@ header p {
 }
 
 .project h3 a {
-    color: var(--quint);
+    color: var(--quint, #FB8500);
 }
 
 
@@ -167,31 +174,30 @@ header p {
 
 
 .backdrop1 {
-    background-image: url("backdrop.jpg");
+    background-image: url("https://ik.imagekit.io/llkhnqhls/csehw3/assets/backdrop.jpg?tr=w-1920,h-1080");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     height: 20em;
-    backdrop-filter: blur(5px);
 }
 
 
 #education {
-    background: var(--tert);
+    background: var(--tert, #8ECAE6);
     padding: 10em 1em;
-    color: var(--prim);
+    color: var(--prim, #023047);
 }
 
 #education h2 {
     font-size: 2rem;
     color: whitesmoke;
     text-align: center;
-    text-shadow: 0 0 100px var(--prim);
+    text-shadow: 0 0 100px var(--prim, #023047);
 
 }
 
 em {
-    color: var(--quat);
+    color: var(--quat, #FFB703);
     font-weight: bold;
     font-style: normal;
 }
@@ -212,7 +218,7 @@ em {
     list-style: none;
     display: inline-block;
     padding: 2em;
-    border: 3px solid var(--secon);
+    border: 3px solid var(--secon, #219EBC);
     border-radius: 2em 2em 2em 0;
     text-align: center;
     min-width: 300px;
@@ -221,23 +227,71 @@ em {
 
 #education ol li h3 {
     margin-bottom: .75em;
-    color: var(--quint)
+    color: var(--quint, #FB8500)
 }
 
 #education ol li:hover {
-    background: var(--secon);
-    color: var(--tert);
-    border: 3px solid var(--tert);
-    box-shadow: 0 0 100px var(--prim);
+    background: var(--secon, #219EBC);
+    color: var(--tert, #8ECAE6);
+    border: 3px solid var(--tert, #8ECAE6);
+    box-shadow: 0 0 100px var(--prim, #023047);
 }
 
 
 
 .backdrop2 {
-    background-image: url("backdrop2.jpg");
+    background-image: url("https://ik.imagekit.io/llkhnqhls/csehw3/assets/backdrop2.jpg?tr=w-1920,h-1080");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     height: 20em;
     backdrop-filter: blur(5px);
+}
+
+
+
+
+
+#project-gallery {
+    padding: 12em 2em;
+    background-color: var(--tert);
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#project-gallery h2 {
+    font-size: 3rem;
+    transform: rotate(90deg) translate(5em);
+}
+
+#project-gallery article {
+    display: inline-block;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5%;
+    border-color: white;
+    padding: 2em;
+    margin: 0 1em;
+}
+
+
+
+
+footer {
+    background: var(--tert, #8ECAE6);
+    padding: 3em;
+    text-align: center;
+    color: var(--prim, #023047);
+}
+
+footer section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+footer section ul li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 1em;
 }
