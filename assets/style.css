@@ -276,13 +276,13 @@ em {
     align-items: center;
     object-fit: cover;
     border-radius: 5%;
-    filter:saturate(0.8);
+    filter: saturate(0.8);
 }
 
 #project-gallery article img:hover {
     transform: scale(1.3);
     transition: all .3s ease;
-    filter:saturate(1.2);
+    filter: saturate(1.2);
 }
 
 
@@ -293,6 +293,7 @@ footer {
     text-align: center;
     color: var(--prim, #023047);
 }
+
 footer h2 {
     margin-bottom: 0.25em;
 }
@@ -306,4 +307,103 @@ footer section ul li {
     list-style: none;
     display: inline-block;
     margin-right: 1em;
+}
+
+@media (max-width: 900px) {
+
+    #projects {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 5em 0em 2em 4em;
+        font-size: 2rem;
+    }
+
+    #projects header h2 {
+        padding: 1em 0 1em;
+        font-size: 6rem;
+        text-shadow: 0 0 100px var(--prim, #023047);
+        font-weight: bolder;
+    }
+
+    #project1 {
+        transform: rotate(0deg) translate(0);
+    }
+
+
+
+
+
+    #education {
+        padding: 10em 1em;
+    }
+
+    #education h2 {
+        font-size: 4rem;
+        color: whitesmoke;
+        text-align: center;
+        text-shadow: 0 0 100px var(--prim, #023047);
+
+    }
+
+    #education h3 {}
+
+    #education ol {
+        display: grid;
+        gap: 2em;
+        grid-template-columns: 1fr;
+        justify-content: space-around;
+        justify-items: normal;
+        align-content: space-evenly;
+        align-items: center;
+        width: 100vw;
+        padding: 3em 3em;
+        font-size: 2.5rem;
+    }
+
+
+
+
+
+
+
+
+    #project-gallery {
+        padding: 8em 2em;
+        background-color: var(--tert);
+        color: white;
+    }
+
+    #project-gallery h2 {
+        font-size: 3rem;
+        margin-bottom: 1em;
+        margin-left: 3em;
+    }
+
+    #project-gallery div {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    #project-gallery article {
+        text-align: center;
+        margin-bottom: 4em;
+
+    }
+
+    #project-gallery article img {
+        width: 60dvw;
+        height: 60dvw;
+        justify-content: center;
+        align-items: center;
+        object-fit: cover;
+        border-radius: 5%;
+        filter: saturate(0.8);
+    }
+
+    #project-gallery article img:hover {
+        transform: scale(1.3);
+        transition: all .3s ease;
+        filter: saturate(1.2);
+    }
+
 }
