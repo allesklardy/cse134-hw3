@@ -406,4 +406,31 @@ footer section ul li {
         filter: saturate(1.2);
     }
 
+
+    nav ul li,
+    nav ul a {
+        display: inline-block;
+        text-decoration: none;
+        color: gainsboro;
+        margin: 0 .3em;
+        font-size: 2rem;
+    }
+
+    nav p {
+        font-size: 3rem;
+        font-weight: bold;
+        color: white;
+    }
+
+    nav {
+        background-color: var(--quint, #FFB703);
+        padding: 2em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
 }
