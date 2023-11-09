@@ -16,6 +16,8 @@ a {
 
 html {
     scroll-behavior: smooth !important;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 nav ul li,
@@ -24,6 +26,10 @@ nav ul a {
     text-decoration: none;
     color: gainsboro;
     margin: 0 .3em;
+}
+
+nav input {
+    display: none;
 }
 
 nav p {
@@ -52,6 +58,8 @@ h1 .coloranimation {
             var(--quint, #FB8500),
             var(--secon, #8ECAE6)) 0 0 / var(--bg-size, 400%) 100%;
     color: transparent;
+
+    /* I need this for the animation */
     background-clip: text;
     -webkit-background-clip: text;
     animation: move-bg 4s infinite linear;
@@ -73,7 +81,11 @@ nav {
     align-items: center;
     position: fixed;
     width: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: color(srgb 0 0 0 / 0.5); /* Doesnt know new properties */
+}
+
+nav label {
+    display: none;
 }
 
 
@@ -84,10 +96,10 @@ nav {
     text-align: center;
     color: white;
     height: 100vh;
-    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: inset 0px 0px 25px rgba(0, 0, 0, 0.5);
 }
 
 @keyframes spin {
@@ -179,6 +191,7 @@ header p {
     background-position: center;
     background-attachment: fixed;
     height: 20em;
+    box-shadow: inset 0px 0px 25px rgba(0, 0, 0, 0.5);
 }
 
 
@@ -188,6 +201,7 @@ header p {
     background-position: center;
     background-attachment: fixed;
     height: 20em;
+    box-shadow: inset 0px 0px 25px rgba(0, 0, 0, 0.5);
 }
 
 
@@ -277,6 +291,7 @@ em {
     object-fit: cover;
     border-radius: 5%;
     filter: saturate(0.8);
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5);
 }
 
 #project-gallery article img:hover {
@@ -309,13 +324,21 @@ footer section ul li {
     margin-right: 1em;
 }
 
+
+/* Doesnt know @scope */
+@scope (footer) {
+    a {
+        text-decoration: none;
+        color: var(--prim, #023047);
+    }
+}
+
 @media (max-width: 1100px) {
 
     #projects {
         display: grid;
         grid-template-columns: 1fr;
         padding: 5em 0em 2em 4em;
-        font-size: 2rem;
     }
 
     #projects header h2 {
@@ -338,14 +361,11 @@ footer section ul li {
     }
 
     #education h2 {
-        font-size: 4rem;
         color: whitesmoke;
         text-align: center;
         text-shadow: 0 0 100px var(--prim, #023047);
 
     }
-
-    #education h3 {}
 
     #education ol {
         display: grid;
@@ -357,7 +377,6 @@ footer section ul li {
         align-items: center;
         width: 100vw;
         padding: 3em 3em;
-        font-size: 2.5rem;
     }
 
 
@@ -374,7 +393,6 @@ footer section ul li {
     }
 
     #project-gallery h2 {
-        font-size: 3rem;
         margin-bottom: 1em;
         margin-left: 3em;
     }
@@ -407,20 +425,55 @@ footer section ul li {
     }
 
 
+    nav input {
+        display: none;
+    }
+
+    nav img {
+        filter: invert(1);
+    }
+
+    nav label {
+        display: inline-block;
+        cursor: pointer;
+    }
+
+
     nav ul li,
     nav ul a {
         display: inline-block;
         text-decoration: none;
         color: gainsboro;
-        margin: 0 .3em;
-        font-size: 2rem;
+        margin: 0 .2em;
     }
 
-    nav p {
-        font-size: 3rem;
-        font-weight: bold;
-        color: white;
+    nav ul {
+        display: none;
+        text-align:right;
+        font-size: 1.4rem;
     }
+
+
+    /* Doesnt know new selectors */
+    nav .menu:has(input:checked) ul {
+        display: block;
+    }
+
+    nav .menu:has(input:checked) ul li {
+        display: block;
+        margin-top: 0.4em;
+    }
+
+    .menu {
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+
+    .menu div {
+        margin: 0 auto;
+    }
+
 
     nav {
         background-color: var(--quint, #FFB703);
@@ -430,7 +483,13 @@ footer section ul li {
         align-items: center;
         position: fixed;
         width: 100%;
-        background: rgba(0, 0, 0, 0.5);
+        background-color: color-mix(in srgb, #000 20%, black); /* Doesnt know new properties */
+        font-size: 1.2rem;
+
+        p { /* Doesnt know new functions */
+            font-weight: bold;
+            color: white;
+        }
     }
 
 }
